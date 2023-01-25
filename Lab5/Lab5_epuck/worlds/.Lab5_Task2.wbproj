@@ -1,0 +1,14 @@
+Webots Project File version R2022b
+perspectives: 000000ff00000000fd000000010000000100000215000003abfc0200000002fb0000001a0043006f006e0073006f006c00650041006c006c0041006c006c0100000000000003ab0000003900fffffffb0000001400540065007800740045006400690074006f00720000000016000002f10000004500ffffff000004a9000003ab00000001000000020000000100000008fc00000000
+simulationViewPerspectives: 000000ff0000000100000002000001000000051a0100000002010000000100
+sceneTreePerspectives: 000000ff00000001000000030000001e000000c0000000fa0100000002010000000200
+maximizedDockId: -1
+centralWidgetVisible: 1
+orthographicViewHeight: 1
+textFiles: -1
+consoles: Console:All:All
+renderingDevicePerspectives: e-puck:camera;1;1;0;0
+renderingDevicePerspectives: e-puck:front camera;1;1;0;0
+renderingDevicePerspectives: e-puck:left camera;1;1;0;0.0910088
+renderingDevicePerspectives: e-puck:rear camera;1;1;0;0.184211
+renderingDevicePerspectives: e-puck:right camera;1;1;0.000947867;0.277413

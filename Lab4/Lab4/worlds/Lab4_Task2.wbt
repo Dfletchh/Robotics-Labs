@@ -1,0 +1,148 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/MattePaint.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5780718087135386 0.5766284306232144 0.5773496661189533 2.096564611888311
+  position -5.820951563181102e-06 -5.820968022678404e-06 7.9414031152463505
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+DEF area RectangleArena {
+  floorSize 2.5 2.25
+  wallAppearance MattePaint {
+    baseColor 0 0 0
+  }
+}
+DEF YellowCylinder Solid {
+  translation 1.125 1.662194621963592e-17 0.34112265430135297
+  rotation -0.8391400425790032 0.5193170874954853 -0.16172121560177286 5.320684895510173e-17
+  children [
+    DEF landmark Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.7
+        radius 0.1
+      }
+    }
+  ]
+  boundingObject USE landmark
+  physics DEF landmarkPH Physics {
+  }
+  recognitionColors [
+    0 0 1
+  ]
+  linearVelocity 2.0186167231663947e-17 6.136796344006209e-17 0.0020546186786858855
+  angularVelocity -1.668334909837274e-16 1.1060475292591036e-16 -2.8828476284417547e-17
+}
+WoodenBox {
+  translation 0.41 -2.8549e-07 0.024
+  rotation 0 0 1 -1.5707953071795862
+  name "wall1"
+  size 0.642 0.254 0.05
+}
+WoodenBox {
+  translation 0.001 2.06033e-06 0.024
+  rotation 0 0 1 1.5708000060964915
+  name "wall2"
+  size 0.128 0.558 0.05
+}
+WoodenBox {
+  translation -0.511 0.435 0.024
+  rotation 0 0 1 1.5708000060964915
+  name "wall3"
+  size 0.254 0.508 0.05
+}
+WoodenBox {
+  translation -0.501 -0.445 0.024
+  rotation 0 0 1 1.5708000060964915
+  name "wall4"
+  size 0.254 0.508 0.05
+}
+WoodenBox {
+  translation -0.371 0 0.024
+  name "wall5"
+  size 0.254 1.137 0.05
+}
+DEF epuck E-puck {
+  hidden position_0_0 -3.027240154378719e-20
+  hidden position_0_1 1.1285820188913391e-19
+  hidden linearVelocity_0 -1.3649900475459915e-08 -5.013757503118239e-14 -3.7082711330077886e-07
+  hidden angularVelocity_0 3.3425740536637585e-12 -9.100119685774951e-07 -1.1168738800908034e-15
+  hidden linearVelocity_1 -1.834370596425901e-08 -6.737952840829554e-14 -3.851492865525542e-07
+  hidden angularVelocity_1 3.341691308350657e-12 -9.097720400152527e-07 -4.2310521489413355e-16
+  hidden linearVelocity_2 -1.8056850153314488e-08 -6.632371137985355e-14 -3.3830135444108e-07
+  hidden angularVelocity_2 3.343456003639361e-12 -9.102517379319595e-07 -1.1167822829431014e-15
+  translation -1.1250000000178155 -6.554720697025916e-17 -6.391454876167844e-05
+  rotation 5.953647303791524e-08 5.953669328742187e-08 0.9999999999999964 1.570800006096495
+  controller "Task2"
+  supervisor TRUE
+  turretSlot [
+    DEF Front DistanceSensor {
+      translation 0.045 0 -0.011
+      name "front distance sensor"
+      lookupTable [
+        0 0 0
+        1.27 1.27 0.1
+      ]
+    }
+    DEF Right DistanceSensor {
+      translation 0.01 -0.035 -0.011
+      rotation 0 0 1 -1.5707853071795865
+      name "right distance sensor"
+      lookupTable [
+        0 0 0
+        1.27 1.27 0.1
+      ]
+    }
+    DEF Rear DistanceSensor {
+      translation -0.025 0 -0.011
+      rotation 0 0 1 3.1415
+      name "rear distance sensor"
+      lookupTable [
+        0 0 0
+        1.27 1.27 0.1
+      ]
+    }
+    DEF Left DistanceSensor {
+      translation 0.01 0.035 -0.011
+      rotation 0 0 1 1.5708
+      name "left distance sensor"
+      recognitionColors [
+        0 0 0
+      ]
+      lookupTable [
+        0 0 0
+        1.27 1.27 0.1
+      ]
+    }
+    InertialUnit {
+      rotation -1 0 0 -5.307179586466759e-06
+    }
+    Camera {
+      translation 0.043 0 -0.015
+      name "camera1"
+      recognitionColors [
+        1 1 0
+      ]
+      fieldOfView 1.57
+      width 80
+      height 80
+      recognition Recognition {
+      }
+    }
+  ]
+}
